@@ -1,0 +1,583 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+   
+    <title>Tour on </title>
+  </head>
+  <body>
+
+
+    <header>
+        <nav>
+            <img src="{% static 'images/logo-black-color-1.png' %}" alt="">
+            <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'how'%}" >How it works</a></li>
+                <li><a href="{% url 'about'%}" >About</a></li>
+                <li><a href="{% url 'contact'%}" >Contact us</a></li>
+                <li><a href="#" >Destination Guide</a></li>
+                <li><a href="#" data-toggle="modal" data-target="#login">Login</a></li>
+                <li><a href="#" data-toggle="modal" data-target="#register"> Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+
+
+<div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Register</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form  action ="register" method="POST">
+ 
+          <div class="form-group">
+            <label class="col-form-label">Name</label>
+            <input type="text" class="form-control" name="name">
+          </div>
+          <div class="form-group">
+            <label  class="col-form-label">Email</label>
+            <input type="text" class="form-control" name="email">
+          </div>
+          <div class="form-group">
+            <label  class="col-form-label">Password</label>
+           <input type="password" class="form-control" name="password1">
+          </div>
+          <div class="form-group">
+            <label  class="col-form-label">Confirm Password</label>
+           <input type="password" class="form-control" name="password2">
+          </div>
+         
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Register</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="login" method="POST">>
+          <div class="form-group">
+            <label  class="col-form-label">Email</label>
+            <input type="text" class="form-control" name="email" >
+          </div>
+          <div class="form-group">
+            <label  class="col-form-label">Password</label>
+           <input type="password" class="form-control" name="password">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Login</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <section class="main">
+        <div class="captions">
+          <div class="overlay"></div>
+          <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+            <source src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" type="video/mp4">
+          </video>
+          <div class="container h-100">
+            <div class="d-flex h-100 text-center align-items-center">
+              <div class="w-100 text-white">
+                <h1 class="display-3 type">Welcome to<p class="tag typed"></p></h1>
+                <p class="lead mb-0">"Where expectations finds its reality"</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+    </section>
+
+    <section class="tourplan">
+
+        <h1 class="text-center text-primary title">Choose your Desired Tour Plan</h1>
+       
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="home-tab" data-toggle="tab" href="planned" role="tab" aria-controls="home" aria-selected="true">Planned Tour</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#surprise" role="tab" aria-controls="profile" aria-selected="false">Surprise Tour</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="contact-tab" data-toggle="tab" href="#road" role="tab" aria-controls="contact" aria-selected="false">Road Trip</a>
+            </li>
+           
+          </ul>
+
+          <div class="tab-content" id="myTabContent">
+
+            <div class="tab-pane fade show active" id="planned" role="tabpanel" aria-labelledby="home-tab">
+                 
+                <form>
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label>Name</label>
+                        <input type="text" class="form-control">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label>Mobile Number</label>
+                        <input type="number" class="form-control">
+                      </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label >From </label>
+                            <input type="date" class="form-control" required>
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label>TO</label>
+                            <input type="date" class="form-control" required>
+                          </div>
+                    </div>
+                   
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label >Adult </label>
+                            <input type="number" class="form-control" required>
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label >Childrens</label>
+                            <input type="number" class="form-control" required>
+                          </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label>From where you want to start</label>
+                        <input type="text" class="form-control">
+                      </div>
+                    
+                      <div class="form-group col-md-6">
+                        <label >Destination</label>
+                        <input type="text" class="form-control" id="inputZip">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                        <label >How would you like to travel?</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" >
+                            <label class="form-check-label" ><i class="fa fa-plane" aria-hidden="true"></i> Airplane</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio">
+                            <label class="form-check-label"><i class="fa fa-car" aria-hidden="true"></i> Car</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio">
+                            <label class="form-check-label"><i class="fa fa-train" aria-hidden="true"></i> Train</label>
+                          </div>
+                    </div>
+                    
+                        <div class="form-group">
+                            <label >Budjet</label>
+                            <input type="Number" class="form-control" >
+                          </div>
+                    
+                          <div class="form-group">
+                        <label >Which type of traveller are you?</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio">
+                            <label class="form-check-label"><i class="fa fa-male" aria-hidden="true"></i> Solo</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio">
+                            <label class="form-check-label"><i class="fa fa-users" aria-hidden="true"></i> Family</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio">
+                            <label class="form-check-label"><i class="fas fa-users"></i> Friends</label>
+                          </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary button">Submit</button>
+                  </form>
+                  
+            </div>
+            <div class="tab-pane fade" id="surprise" role="tabpanel" aria-labelledby="profile-tab">
+                <form>
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label>Name</label>
+                        <input type="text" class="form-control">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label>Mobile Number</label>
+                        <input type="number" class="form-control">
+                      </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label >From </label>
+                            <input type="date" class="form-control" required>
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label>TO</label>
+                            <input type="date" class="form-control" required>
+                          </div>
+                    </div>
+                   
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label >Adult </label>
+                            <input type="number" class="form-control" required>
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label >Childrens</label>
+                            <input type="number" class="form-control" required>
+                          </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label>From where you want to start</label>
+                        <input type="text" class="form-control">
+                      </div>
+                    
+                      <div class="form-group col-md-6">
+                        <label >Destination</label>
+                        <input type="text" class="form-control" id="inputZip">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                        <label >How would you like to travel?</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" >
+                            <label class="form-check-label" ><i class="fa fa-plane" aria-hidden="true"></i> Airplane</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio">
+                            <label class="form-check-label"><i class="fa fa-car" aria-hidden="true"></i> Car</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio">
+                            <label class="form-check-label"><i class="fa fa-train" aria-hidden="true"></i> Train</label>
+                          </div>
+                    </div>
+                    
+                        <div class="form-group">
+                            <label >Budjet</label>
+                            <input type="Number" class="form-control" >
+                          </div>
+                    
+                          <div class="form-group">
+                        <label >Which type of traveller are you?</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio">
+                            <label class="form-check-label"><i class="fa fa-male" aria-hidden="true"></i> Solo</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio">
+                            <label class="form-check-label"><i class="fa fa-users" aria-hidden="true"></i> Family</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio">
+                            <label class="form-check-label"><i class="fas fa-users"></i> Friends</label>
+                          </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+            </div>
+            <div class="tab-pane fade" id="road" role="tabpanel" aria-labelledby="contact-tab">
+                <form>
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label>Name</label>
+                        <input type="text" class="form-control">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label>Mobile Number</label>
+                        <input type="number" class="form-control">
+                      </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label >From </label>
+                            <input type="date" class="form-control" required>
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label>TO</label>
+                            <input type="date" class="form-control" required>
+                          </div>
+                    </div>
+                   
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label >Adult </label>
+                            <input type="number" class="form-control" required>
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label >Childrens</label>
+                            <input type="number" class="form-control" required>
+                          </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label>From where you want to start</label>
+                        <input type="text" class="form-control">
+                      </div>
+                    
+                      <div class="form-group col-md-6">
+                        <label >Destination</label>
+                        <input type="text" class="form-control" id="inputZip">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                        <label >How would you like to travel?</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" >
+                            <label class="form-check-label" ><i class="fa fa-plane" aria-hidden="true"></i> Airplane</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio">
+                            <label class="form-check-label"><i class="fa fa-car" aria-hidden="true"></i> Car</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio">
+                            <label class="form-check-label"><i class="fa fa-train" aria-hidden="true"></i> Train</label>
+                          </div>
+                    </div>
+                    
+                        <div class="form-group">
+                            <label >Budjet</label>
+                            <input type="Number" class="form-control" >
+                          </div>
+                    
+                          <div class="form-group">
+                        <label >Which type of traveller are you?</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio">
+                            <label class="form-check-label"><i class="fa fa-male" aria-hidden="true"></i> Solo</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio">
+                            <label class="form-check-label"><i class="fa fa-users" aria-hidden="true"></i> Family</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio">
+                            <label class="form-check-label"><i class="fas fa-users"></i> Friends</label>
+                          </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+             </div>
+          
+          </div>
+
+    </section>
+    <section>
+
+        <div class="services">
+            <h1>Our Services</h1>
+            <h3>________________</h3>
+            <div class="cen">
+                <div class="service">
+                    <i class="fas fa-biohazard"></i> 
+                    <h2>Tell us your Tour Preferences</h2>
+                    <p>Fill the above form</p>
+                </div>
+                <div class="service">
+                    <i class="fas fa-people-carry"></i>
+                    <h2>Get your customized Tour plan</h2>
+                    <p>Just for you</p>           
+                </div>
+                <div class="service">
+                    <i class="fas fa-subway"></i>
+                    <h2>Start your Tour, as you preferred!</h2>
+                    <p>That's it! Now go & make memories</p>           
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!-- Special destinations -->
+    <section class="gallery">
+        <h1 class="text-center"><i class="fa fa-lightbulb-o" aria-hidden="true"></i> Tour Ideas...<i class="fas fa-blind"></i></h1>       
+            <div class="filter">
+              <ul id="filters">                 
+                    <li><a href="{% url 'international' %}" >International</a></li>
+                    <li><a href="{% url 'domestic' %}" >Domestic</a></li>
+                </ul>
+            </div>
+        
+        <div class="container">
+            <div class="row">
+                {% for d in dests %}
+                 <div class="col-md-3">
+                
+                    <div class="gallery-box">
+
+                        <img src="{{d.image.url}}" alt="">
+                        <h4>{{d.name}}</h4>
+                        <h4 id="days">{{d.days}}</h4>
+                    </div>
+                </div>
+               
+
+                {% endfor %}
+
+            </div>
+            <a href="{% url 'moreideas'%}"><button class="more">Choose more</button></a>
+        </div>
+    </section>
+
+
+    <section class="video">
+  
+        <div class="row">
+            <div class="col-md-6">
+                <h1 class="m-3">WE AT tour on BELIEVE</h1>
+                <div class="tagline">
+                    <h1 class="text-center">"TO LIVE IS TO TRAVEL"</h1>
+                </div>
+
+                <div class="desc">
+                    <hr>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore excepturi vel omnis. Sequi cumque dicta beatae ipsum nihil molestiae numquam similique, atque accusamus id neque nisi veritatis minus pariatur nulla.Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt eligendi culpa quidem, consectetur recusandae dignissimos nesciunt dolores, non quae tempore sequi pariatur maiores. Deserunt dolores voluptate repudiandae in nam minus, expedita laudantium quibusdam molestias necessitatibus unde ipsum aliquam quia quo, facilis temporibus asperiores incidunt debitis dicta, quaerat aut possimus sit?</p>
+                    <p >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur labore officia voluptatum ipsum atque dolorem eum quos corporis? Voluptatibus, aspernatur.</p>
+                    <button>Read More</button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <iframe width="500" height="315" src="https://www.youtube.com/embed/ibuUmMhD2Pg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" ></iframe>
+            </div>
+        </div>
+    
+    </section>
+
+
+   
+<!-- customer review -->
+
+    <section class="reviews">  
+            <h2 class="text-center">Happy Travellers <i class="fa fa-smile-o" aria-hidden="true"></i></h2>
+            <div class="row">
+                {% for review in reviews %}
+              <div class="col-lg-3">
+                
+                 <div class="card">
+                        <img src="{{review.image.url}}" alt="">
+                    
+                    <div class="card-body">
+                        <div class="feedback">
+                            <h4 class="text-center">{{review.name}}</h4>
+                            <small>{{review.city}}</small>
+                            <p>{{review.review}}</p>
+                        </div>
+
+                    </div>
+                </div>               
+              </div>
+                {% endfor %}
+            </div>
+        
+
+    </section>
+   <!-- footer -->
+
+   <section class="footer">
+
+        <div class="row">
+
+            <div class="col-md-3">
+                <h4>Contact us</h4>
+               <p><i class="fa fa-map-marker"></i>tour On Holidays, Workafella, Rathha Towers, Tek Meadows - A Block, 4th Floor, Opposite to Accenture, Sholinganallur, OMR, Chennai-119</p>
+               <p><i class="fa fa-phone-square" ></i>909090909</p>
+              
+           
+            </div>
+            <div class="col-md-2">
+                <h4>Book Now</h4>
+                <ul>
+                    <li><p>Surprise Tour</p></li>
+                    <li><p>Planned Trip</p></li>
+                    <li><p>Road Trip</p></li>
+                    <li><p>Tour ideas</p></li>
+                </ul>
+            </div>
+
+
+            <div class="col-md-2">
+                <h4>Quick Link</h4>
+                <ul>
+                    <li><p>How it works</p></li>
+                    <li><p>Terms & condition</p></li>
+                    <li><p>BLog</p></li>
+                    <li><p>Privacy Policy</p></li>
+                </ul>
+            </div>
+
+
+            <div class="col-md-2">
+                <h4>Follow us</h4>
+                <p><i class="fa fa-facebook-official"></i>909090909</p>
+                <p><i class="fa fa-youtube-play" ></i>touron</p>
+                <p><i class="fa fa-twitter"></i>@touron</p>
+            
+            </div>
+
+            
+            <div class="col-md-3">
+                <h4>Follow us</h4>           
+            </div>
+         
+        </div><hr>
+        <p class="copyright">Made with <i class="fa fa-heart" ></i>by Mani </p>
+ 
+</section>
+
+    
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/10b23c199a.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+     <script src="{% static 'js/typed.min.js' %}"></script>
+     <script>
+      var typed = new Typed(".typed",{
+        strings:['tour on'],
+        typeSpeed:200,
+        loop:false,
+        showCursor:false,
+        startDelay:500
+    
+      });
+     </script>
+
+    </body>
+  
+</html>

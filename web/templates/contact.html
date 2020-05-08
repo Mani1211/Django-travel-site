@@ -1,0 +1,163 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/contact.css'%}">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+   
+    <title>Tour on </title>
+  </head>
+
+  <body>
+   
+
+
+  
+    <header>
+
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">Home</a></li><span>--></span>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+  
+
+
+    <section id="contact" >
+        
+        <div class="container">
+            <div class="row py-4">
+                <div class="col-md-6">
+                    <form>
+                        <h1 class="text-center text-white"> CONTACT US</h1>
+                     
+                        <div class="form-group">
+                          <label  class=" text-monospace text-white py-6">Your Name</label>
+                          <input type="text" class="form-control" id="inputAddress" >
+                        </div>
+                        <div class="form-group">
+                          <label  class="text-monospace text-white">Your Mobile Number</label>
+                          <input type="text" class="form-control" id="inputAddress2">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="text-monospace text-white">Your Message</label>
+                            <textarea class="form-control" rows="3"></textarea>
+                          </div>
+                      
+                     
+                        <button type="submit" class="btn btn-primary text-center my-4">Send Message</button>
+                      </form>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h1>CONTACT INFO</h1>
+                            <p class="py-4"><i class="fa fa-map-marker"></i>tour On Holidays,<br>
+                            Workafella, Rathha Towers,<br>
+                     Tek Meadows - A Block, 4th Floor,<br>
+                     Opposite to Accenture,<br>
+                             Sholinganallur, OMR, Chennai-119</p>
+                             <p><i class="fa fa-phone-square" ></i>9967634789</p>
+                             <p><i class="fa fa-envelope" ></i>touron@gmail.com</p>
+                             <div class="map">
+                             <div id="wrapper-9cd199b9cc5410cd3b1ad21cab2e54d3">
+                                <div id="map-9cd199b9cc5410cd3b1ad21cab2e54d3"></div><script>(function () {
+                                var setting = {"height":225,"width":500,"zoom":17,"queryString":"2883, GA Canal Rd, Graham Nagar, Shivaji Nagar, Thanjavur, Tamil Nadu 613001, India","place_id":"ChIJZxGEy5q4qjsRgybdKTWn8NE","satellite":false,"centerCoord":[10.779438853023425,79.14341744999999],"lang":"en","cityUrl":"/india/thanjavur-42739","cityAnchorText":"Map of Thanjavur, South Kerala, India","id":"map-9cd199b9cc5410cd3b1ad21cab2e54d3","embed_id":"202576"};
+                                var d = document;
+                                var s = d.createElement('script');
+                                s.src = 'https://embedgooglemap.1map.com/js/script-for-user.js?embed_id=202576';
+                                s.async = true;
+                                s.onload = function (e) {
+                                  window.OneMap.initMap(setting)
+                                };
+                                var to = d.getElementsByTagName('script')[0];
+                                to.parentNode.insertBefore(s, to);
+                              })();</script><a href="https://embedgooglemap.1map.com">1 Map</a></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+      
+    <section class="footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-3">
+                    <h4>Contact us</h4>
+                   <p><i class="fa fa-map-marker"></i>tour On Holidays, Workafella, Rathha Towers, Tek Meadows - A Block, 4th Floor, Opposite to Accenture, Sholinganallur, OMR, Chennai-119</p>
+                   <p><i class="fa fa-phone-square" ></i>909090909</p>
+                  
+               
+                </div>
+                <div class="col-md-2">
+                    <h4>Book Now</h4>
+                    <ul>
+                        <li><p>Surprise Tour</p></li>
+                        <li><p>Planned Trip</p></li>
+                        <li><p>Road Trip</p></li>
+                        <li><p>Tour ideas</p></li>
+                    </ul>
+                </div>
+
+
+                <div class="col-md-2">
+                    <h4>Quick Link</h4>
+                    <ul>
+                        <li><p>How it works</p></li>
+                        <li><p>Terms & condition</p></li>
+                        <li><p>BLog</p></li>
+                        <li><p>Privacy Policy</p></li>
+                    </ul>
+                </div>
+
+
+                <div class="col-md-2">
+                    <h4>Follow us</h4>
+                    <p><i class="fa fa-facebook-official"></i>909090909</p>
+                    <p><i class="fa fa-youtube-play" ></i>touron</p>
+                    <p><i class="fa fa-twitter"></i>@touron</p>
+                
+                </div>
+
+                
+                <div class="col-md-3">
+                    <h4>Follow us</h4>
+                    <img src="images/logo-black-color-1.png" alt="">
+                   
+                   
+                    
+                    
+                </div>
+             
+            </div><hr>
+            <p class="copyright">Made with <i class="fa fa-heart" ></i>by Mani </p>
+        </div>
+    </section>
+      
+      
+  <script src="plugins/Isotope/isotope.pkgd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+  crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+  crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+
+  <script src="js/script.js"></script>
+  <script src="js/typed.min.js"></script>
+  
+</body>
+</html>

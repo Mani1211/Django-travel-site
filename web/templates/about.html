@@ -1,0 +1,219 @@
+
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+   
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+   
+    <title>Tour on </title>
+  </head>
+
+  <body style="background-color:#543131;">
+   
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="#" id="about">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+ <section class="about bg-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 ceo">
+                <span><i class="fa fa-lightbulb-o" aria-hidden="true"></i></span>
+                <h1 >MR.VIKASH MANOHARAN CEO, FOUNDER</h1>
+          
+        <p>
+            Founded in August of 2018, TourOn has since planned and lead more than 200 dream tours. Vikash Manoharan, Founder of TourOn, is a travel enthusiast and found TourOn to help others realize their wanderlust goals. Vikash used to work in the IT industry until one day he realized, a life confined to a desk is not one for him. TourOn took wings out of his passion for travel and has grown through his ideas as an experienced travele</p>    
+        </div>
+        
+            <div class="col-md-5">
+                <div class="img-wrap">
+                    <img src="{% static 'images/about-us-2.jpg' %}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="store">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Our Works</h1>
+                <p id="store-feature">TourOn provides both Domestic and International tour packages with different customization options. Do you and your gang often find yourself dreaming on and on about that perfect trip but it’s just not happening because no one wants to take the effort to do all the research and planning? Then our Planned Tour package is the right option for you. Click here to know more. Or are you a wanderer soul looking for adventure? TourOn’s Suprise Tour might just be the thing you are looking for. To know more about this package, click here. And our Road Trip package is the answer to all explorers who are in love with their bikes.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section>
+    <div class="team-section">
+        <h1>Our Team</h1>
+        <span class='border'></span>
+        <div class="ps">
+            <div class="row">
+                <div class="col-md-4">
+                    <div>
+                        <a href="#p1"><img src="{% static 'images/p1.jpg'%} " width="200px" height="220px" alt=""></a>
+                        <div class="section" >
+                            
+                           <h1>S Dinesh kumar</h1>
+                           <h3>Buisness head</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+
+                    <div>
+
+                        <a href="#p2"><img src="{% static 'images/p2.jpg'%} " alt=""></a>
+
+                        <div class="section">
+                           
+                            <h1>S Dinesh kumar</h1>
+                            <h3>Buisness head</h3>
+                            
+                        
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="col-md-4">
+
+                    <div>
+
+                        <a href="#p3"><img src="{% static 'images/p3.jpg'%} "  width="200px" height="350px "alt=""></a>
+                        <div class="section" >
+                           
+                            <h1>S Dinesh kumar</h1>
+                            <h3>Buisness head</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>  
+    </div>
+</section>
+
+<!-- customer review -->
+
+     <section class="reviews">  
+            <h2 class="text-center">Happy Travellers <i class="fa fa-smile-o" aria-hidden="true"></i></h2>
+            <div class="row">
+                {% for review in reviews %}
+              <div class="col-lg-3">
+                
+                 <div class="card">
+                        <img src="{{review.image.url}}" alt="">
+                    
+                    <div class="card-body">
+                        <div class="feedback">
+                            <h4 class="text-center">{{review.name}}</h4>
+                            <small>{{review.city}}</small>
+                            <p>{{review.review}}</p>
+                        </div>
+
+                    </div>
+                </div>               
+              </div>
+                {% endfor %}
+            </div>
+        
+
+    </section>
+        
+      
+    <section class="footer">
+   
+            <div class="row">
+
+                <div class="col-md-3">
+                    <h4>Contact us</h4>
+                   <p><i class="fa fa-map-marker"></i>tour On Holidays, Workafella, Rathha Towers, Tek Meadows - A Block, 4th Floor, Opposite to Accenture, Sholinganallur, OMR, Chennai-119</p>
+                   <p><i class="fa fa-phone-square" ></i>909090909</p>
+                  
+               
+                </div>
+                <div class="col-md-2">
+                    <h4>Book Now</h4>
+                    <ul>
+                        <li><p>Surprise Tour</p></li>
+                        <li><p>Planned Trip</p></li>
+                        <li><p>Road Trip</p></li>
+                        <li><p>Tour ideas</p></li>
+                    </ul>
+                </div>
+
+
+                <div class="col-md-2">
+                    <h4>Quick Link</h4>
+                    <ul>
+                        <li><p>How it works</p></li>
+                        <li><p>Terms & condition</p></li>
+                        <li><p>BLog</p></li>
+                        <li><p>Privacy Policy</p></li>
+                    </ul>
+                </div>
+
+
+                <div class="col-md-2">
+                    <h4>Follow us</h4>
+                    <p><i class="fa fa-facebook-official"></i>909090909</p>
+                    <p><i class="fa fa-youtube-play" ></i>touron</p>
+                    <p><i class="fa fa-twitter"></i>@touron</p>
+                
+                </div>
+
+                
+                <div class="col-md-3">
+                    <h4>Follow us</h4>
+ 
+                </div>
+             
+            </div><hr>
+            <p class="copyright">Made with <i class="fa fa-heart" ></i>by Mani </p>
+       
+    </section>
+      
+      
+  <script src="plugins/Isotope/isotope.pkgd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+  crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+  crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+   <!-- <script>
+    $(window).on('scroll',function(){
+if($(window).scrollTop()){
+    $('nav').addClass('black');
+}
+else {
+    $('nav').removeClass('black');
+}
+    })
+</script> -->
+  <script src="js/script.js"></script>
+  <script src="js/typed.min.js"></script>
+  
+</body>
+</html>
