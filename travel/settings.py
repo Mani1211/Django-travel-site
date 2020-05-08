@@ -25,7 +25,7 @@ SECRET_KEY = 'bw_$^=s-v_bm%u0xad$djgm-ek%=k!t6x51_c*sn6+!we=y-$h'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['travel-touron.herokuapp.com']
 
 
 # Application definition
