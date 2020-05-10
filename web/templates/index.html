@@ -440,8 +440,8 @@
                 
                     <div class="gallery-box">
 
-                     <a href="{% url 'destmap' d.id %}"><img src="{{d.image.url}}" alt=""></a>
-                        <h4>{{d.name}}</h4>
+                     <img src="{{d.image.url}}" alt="">
+                       <a href="{% url 'destmap' d.id %}"> <h4>{{d.name}}</h4></a>
                         <h4 id="days">{{d.days}}</h4>
                     </div>
                 </div>
