@@ -10,6 +10,8 @@ class Destinaion(models.Model):
     days = models.CharField(max_length=255)
     image = models.ImageField(upload_to='pics')
     tourtype=models.CharField(max_length=20,choices=Type)
+    lat = models.FloatField(null=True)
+    lng = models.FloatField(null = True)
 
 
 class CustomerReview(models.Model):

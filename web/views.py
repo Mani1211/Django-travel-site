@@ -40,3 +40,7 @@ def moreideas(request):
     print(dests)
     return render(request,'destination.html',{'reviews':reviews,'dests':dests})
 
+def destmap(request,pk):
+    destmap = Destinaion.objects.get(id = pk)
+    print(destmap)
+    return render(request,'map.html',{'destmap':destmap})
